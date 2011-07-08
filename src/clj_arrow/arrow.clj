@@ -1,5 +1,4 @@
-(ns clj-arrow.arrow
-  (:use clojure.tools.logging))
+(ns clj-arrow.arrow)
 
 (defn clone [x]
   [x x])
