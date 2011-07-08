@@ -9,6 +9,9 @@
 (defn arr [f]
   f)
 
+(defmacro flow [& flows]
+  `(-> ~(first flows) ~@(partition 2 (rest flows))))
+
 (defprotocol Arrow_p
   (>>>_int [this dest])
   (fst_int [this]))
