@@ -9,6 +9,10 @@
 (defn arr [f]
   f)
 
+(defprotocol Arrow_p
+  (>>>_int [this dest])
+  (fst_int [this]))
+
 (extend-type clojure.lang.IFn
   Arrow_p
   (>>>_int [this dest]
