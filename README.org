@@ -55,7 +55,7 @@ they could be used just as well with any type of arrow (functions can be seen as
 
 This is a delicate subject, which I must admit that I don't quite understand myself. 
 However, for clj-arrow it's simple: any /thing/ (class, interface, record ...) implementing 
-the =clj-arrow.Arrow= protocol (or the underlying interface) is an arrow. The protocol defines the following functions:
+the =clj-arrow.arrow/Arrow= protocol (or the underlying interface) is an arrow. The protocol defines the following functions:
 
 - =run= - function to execute the arrow. 
 - =>>>_int= - the arrow's implementation of =>>>=, takes only two arguments.
