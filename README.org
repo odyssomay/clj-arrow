@@ -3,10 +3,27 @@
 ** Usage and installation
 
 First add [clj-arrow "1.0.2-SNAPSHOT"] as a dependency in leiningen, or put the jar on the classpath (requires only clojure).
-Then =use=, or =require= =clj-arrow.arrow=. In this namespace these functions exist (see docstrings for usage):
+Then =use=, or =require= clj-arrow.arrow. In this namespace these functions exist (see docstrings for usage):
 
-- >>>
-- <<<
+- >>> - create a flow of functions to the right.
+- <<< - create a flow of functions to the left.
+- fst - apply a function to the first value of a pair.
+- snd - apply a function to the second value of a pair.
+- *** - apply two functions to respective values of a pair.
+- &&& - same as ***, but takes a single value which is cloned to a pair.
+- ||| - an =if= conditional statement for functions.
 
+License (zlib)
 
+Copyright (c) 2011 Jonathan Fischer Friberg
+
+This software is provided 'as-is', without any express or implied warranty. In no event will the authors be held liable for any damages arising from the use of this software.
+
+Permission is granted to anyone to use this software for any purpose, including commercial applications, and to alter it and redistribute it freely, subject to the following restrictions:
+
+1. The origin of this software must not be misrepresented; you must not claim that you wrote the original software. If you use this software in a product, an acknowledgment in the product documentation would be appreciated but is not required.
+
+2. Altered source versions must be plainly marked as such, and must not be misrepresented as being the original software.
+
+3. This notice may not be removed or altered from any source distribution.
 
