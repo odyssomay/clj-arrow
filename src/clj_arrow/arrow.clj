@@ -91,6 +91,12 @@ Example:
       (vec (pvalues (run arr1 x) (run arr2 y))))
     (>>> (fst arr1) (snd arr2))))
 
+(defn ***-multithread
+  "see ***"
+  [arr1 arr2]
+  (fn [[x y]]
+    (vec (pvalues (run arr1 x) (run arr2 y)))))
+
 (defn &&& 
   "As *** but takes a single value
   and clones it.
@@ -100,6 +106,11 @@ Example:
 => [2 0]"
   [arr1 arr2]
   (>>> clone (*** arr1 arr2)))
+
+(defn &&&-multithread
+  "same as &&&"
+  [arr1 arr2]
+  (>>> clone (***-multithread arr1 arr2)))
 
 (defn |||
   "Create an arrow that takes a pair.
