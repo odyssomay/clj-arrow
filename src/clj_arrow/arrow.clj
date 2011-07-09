@@ -22,13 +22,13 @@
 (defmacro flow [& flows]
   `(-> ~(first flows) ~@(partition 2 (rest flows))))
 
-(defprotocol Arrow_p
+(defprotocol Arrow
   (run [this value])
   (>>>_int [this dest])
   (fst_int [this]))
 
 (extend-type clojure.lang.IFn
-  Arrow_p
+  Arrow
   (run [this value] (this value))
   (>>>_int [this dest]
        #(run dest (this %)))
