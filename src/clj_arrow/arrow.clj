@@ -108,7 +108,7 @@ Example:
   (>>> clone (*** arr1 arr2)))
 
 (defn &&&-multithread
-  "same as &&&"
+  "see &&&"
   [arr1 arr2]
   (>>> clone (***-multithread arr1 arr2)))
 
