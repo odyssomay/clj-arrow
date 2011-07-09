@@ -1,6 +1,6 @@
 (ns clj-arrow.arrow)
 
-(let [multithread (atom nil)]
+(let [multithread (atom false)]
   (defn set-multithreading-on [& _]
     (reset! multithread true))
 

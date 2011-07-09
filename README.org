@@ -3,6 +3,8 @@
 First add [clj-arrow "1.0.2-SNAPSHOT"] as a dependency in leiningen, or put the jar on the classpath (requires only clojure).
 Then =use=, or =require= clj-arrow.arrow. In this namespace these functions exist (see docstrings for usage):
 
+*** functions creating functions
+
 - =>>>= - create a flow of functions to the right.
 - =<<<= - create a flow of functions to the left.
 - =fst= - apply a function to the first value of a pair.
@@ -10,6 +12,12 @@ Then =use=, or =require= clj-arrow.arrow. In this namespace these functions exis
 - =***= - apply two functions to respective values of a pair.
 - =&&&= - same as =***=, but takes a single value which is cloned to a pair.
 - =|||= - an =if= conditional statement for functions.
+
+*** misc
+
+- =set-multithreading-on= - enables multithreading (see below)
+- =set-multithreading-off= - disables multithreading
+- =is-multithreading?= - returns true/false whether multithreading is enabled or not
 
 ** Multithreading
 
@@ -37,13 +45,13 @@ they could be used just as well with any arrow (functions can be seen as the sub
 
 This is a delicate subject, which I must admit that I don't quite understand myself. 
 However, for clj-arrow it's simple: any /thing/ (class, interface, record ...) implementing 
-the =clj-arrow.Arrow= protocol* is an arrow. The protocol defines the following functions:
+the =clj-arrow.Arrow= protocol (or the underlying interface) is an arrow. The protocol defines the following functions:
 
 - =run= - when this function is called, the arrow should execute. 
 - =>>>_int= - the arrows implementation of >>>, takes only two arguments.
 - =fst_int= - the arrows implementation of fst.
 
-Or the underlying interface*
+Any /thing/ implementing these three functions will work with all the functions described in Usage.
 
 ** License (zlib)
 
