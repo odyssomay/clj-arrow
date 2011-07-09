@@ -1,5 +1,15 @@
 (ns clj-arrow.arrow)
 
+(let [multithread (atom nil)]
+  (defn set-multithreading-on [& _]
+    (reset! multithread true))
+
+  (defn set-multithreading-off [& _]
+    (reset! multithread false))
+
+  (defn is-multithreading? [& _]
+    @multithread))
+
 (defn clone [x]
   [x x])
 
@@ -13,13 +23,15 @@
   `(-> ~(first flows) ~@(partition 2 (rest flows))))
 
 (defprotocol Arrow_p
+  (run [this value])
   (>>>_int [this dest])
   (fst_int [this]))
 
 (extend-type clojure.lang.IFn
   Arrow_p
+  (run [this value] (this value))
   (>>>_int [this dest]
-       (comp dest this))
+       #(run dest (this %)))
   (fst_int [this]
            (fn [[x y]]
              [(this x) y])))
@@ -74,7 +86,10 @@ Example:
   ((*** inc dec) [1 1])
 => [2 0]"
   [arr1 arr2]
-  (>>> (fst arr1) (snd arr2)))
+  (if (is-multithreading?)
+    (fn [[x y]] 
+      (vec (pvalues (run arr1 x) (run arr2 y))))
+    (>>> (fst arr1) (snd arr2))))
 
 (defn &&& 
   "As *** but takes a single value
