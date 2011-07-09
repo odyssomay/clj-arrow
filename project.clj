@@ -1,4 +1,7 @@
-(defproject clj-arrow "1.0.2-SNAPSHOT"
-  :description "FIXME: write description"
-  :dependencies [[org.clojure/clojure "1.2.1"]
-                 [org.clojure/tools.logging "0.1.2"]])
+(defproject 
+  clj-arrow "1.0.3-SNAPSHOT"
+  :description "A library for combining functions."
+  :url "http://github.com/odyssomay/clj-arrow"
+  :license {:name "zlib License"
+            :url "http://en.wikipedia.org/wiki/zlib_License"}:
+  :dependencies [[org.clojure/clojure "1.2.1"]])
