@@ -46,6 +46,24 @@ If the function =set-multithreading-on= is called, multithreading is turned on f
 ;=> [nil nil]
 #+END_SRC
 
+It should be noted that =(set-multithreading-on)= (or off) alters the behavior of =***=/=&&&=, and not the function returned by =***=/=&&&= . 
+Consider the following:
+
+#+BEGIN_SRC clojure
+(def f (&&& #(Thread/sleep %) #(Thread/sleep %)))
+
+(time (f 1000))
+;   "Elapsed time: 2003.232535 msecs"
+;=> [nil nil]
+
+(set-multithreading-on)
+;=> true
+
+(time (f 1000))
+;   "Elapsed time: 2000.359132 msecs"
+;=> [nil nil]
+#+END_SRC
+
 ** Functions and arrows
 
 While I only mention functions as arguments to the functions above, 
