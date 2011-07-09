@@ -21,11 +21,11 @@ First =use=, or =require= clj-arrow.arrow. In this namespace these functions exi
 
 *** multithreading
 
-- =set-multithreading-on= - enables multithreading (see below)
-- =set-multithreading-off= - disables multithreading
-- =is-multithreading?= - returns true/false whether multithreading is enabled or not
-- =***-multithread= - same as =***= but always multithreads
-- =&&&-multithread= - same as =&&&= but always multithreads
+- =set-multithreading-on= - enables multithreading (see below).
+- =set-multithreading-off= - disables multithreading.
+- =is-multithreading?= - returns true/false whether multithreading is enabled or not.
+- =***-multithread= - same as =***= but always multithreads.
+- =&&&-multithread= - same as =&&&= but always multithreads.
 
 ** Multithreading
 
@@ -46,8 +46,8 @@ If the function =set-multithreading-on= is called, multithreading is turned on f
 
 ** Functions and arrows
 
-While I'm only talking about using functions as arguments to the functions above, 
-they could be used just as well with any arrow (functions can be seen as the subset of arrows).
+While I only mention functions as arguments to the functions above, 
+they could be used just as well with any type of arrow (functions can be seen as the subset of arrows).
 
 *** What is an arrow?
 
@@ -59,7 +59,8 @@ the =clj-arrow.Arrow= protocol (or the underlying interface) is an arrow. The pr
 - =>>>_int= - the arrow's implementation of >>>, takes only two arguments.
 - =fst_int= - the arrow's implementation of fst.
 
-Any /thing/ implementing these three functions will work with all the functions described in Usage.
+An arrow implementing these functions must also not make any assumptions of what type of arrow is sent as the second argument to the =>>>_int= function.
+If these conditions are met, the arrow will work with all the functions described in Usage.
 
 ** License (zlib)
 
