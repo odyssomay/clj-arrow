@@ -37,15 +37,13 @@ they could be used just as well with any arrow (functions can be seen as the sub
 
 This is a delicate subject, which I must admit that I don't quite understand myself. 
 However, for clj-arrow it's simple: any /thing/ (class, interface, record ...) implementing 
-the =clj-arrow.Arrow= protocol* is an arrow. The protocol defines the following functions:
+the =clj-arrow.Arrow= protocol$*$ is an arrow. The protocol defines the following functions:
 
 - =run= - when this function is called, the arrow should execute. 
 - =>>>_int= - the arrows implementation of >>>, takes only two arguments.
 - =fst_int= - the arrows implementation of fst.
 
-#+BEGIN_EXAMPLE
-* Or the underlying interface
-#+END_EXAMPLE
+$*$ Or the underlying interface
 
 ** License (zlib)
 
