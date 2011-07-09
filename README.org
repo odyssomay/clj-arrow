@@ -5,8 +5,8 @@
 First add [clj-arrow "1.0.2-SNAPSHOT"] as a dependency in leiningen, or put the jar on the classpath (requires only clojure).
 Then =use=, or =require= clj-arrow.arrow. In this namespace these functions exist (see docstrings for usage):
 
-- >>> - create a flow of functions to the right.
-- <<< - create a flow of functions to the left.
+- =>>>= - create a flow of functions to the right.
+- =<<<= - create a flow of functions to the left.
 - fst - apply a function to the first value of a pair.
 - snd - apply a function to the second value of a pair.
 - *** - apply two functions to respective values of a pair.
