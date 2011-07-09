@@ -1,0 +1,12 @@
+#+TITLE: clj-arrow
+
+** Usage and installation
+
+First add [clj-arrow "1.0.2-SNAPSHOT"] as a dependency in leiningen, or put the jar on the classpath (requires only clojure).
+Then =use=, or =require= =clj-arrow.arrow=. In this namespace these functions exist (see docstrings for usage):
+
+- >>>
+- <<<
+
+
+
