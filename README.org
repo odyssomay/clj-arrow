@@ -28,6 +28,23 @@ If the function =set-multithreading-on= is called, multithreading is turned on f
 ;=> [nil nil]
 #+END_SRC
 
+** Functions and arrows
+
+While I'm only talking about using functions as arguments to the functions above, 
+they could be used just as well with any arrow (functions can be seen as the subset of arrows).
+
+*** What is an arrow?
+
+This is a delicate subject, which I must admit that I don't quite understand myself. 
+However, for clj-arrow it's simple: any /thing/ (class, interface, record ...) implementing 
+the =Arrow= protocol[fn:1] (clj-arrow.arrow) is an arrow. The protocol defines the following functions:
+
+- =run= - when this function is called, the arrow should execute. 
+- =>>>_int= - the arrows implementation of >>>, takes only two arguments.
+- =fst_int= - the arrows implementation of fst.
+
+[fn:1] Or the underlying interface
+
 ** License (zlib)
 
 Copyright (c) 2011 Jonathan Fischer Friberg
