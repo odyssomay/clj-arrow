@@ -11,6 +11,23 @@ Then =use=, or =require= clj-arrow.arrow. In this namespace these functions exis
 - =&&&= - same as =***=, but takes a single value which is cloned to a pair.
 - =|||= - an =if= conditional statement for functions.
 
+** Multithreading
+
+If the function =set-multithreading-on= is called, multithreading is turned on for the =***= and =&&&= functions.
+
+#+BEGIN_SRC clojure
+(time ((&&& #(Thread/sleep %) #(Thread/sleep %)) 1000))
+;   "Elapsed time: 2006.765373 msecs"
+;=> [nil nil]
+
+(set-multithreading-on)
+;=> true
+
+(time ((&&& #(Thread/sleep %) #(Thread/sleep %)) 1000))
+;   "Elapsed time: 1004.629826 msecs"
+;=> [nil nil]
+#+END_SRC
+
 ** License (zlib)
 
 Copyright (c) 2011 Jonathan Fischer Friberg
