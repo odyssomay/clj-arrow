@@ -1,7 +1,13 @@
+
+clj-arrow is a small library for combining functions.
+
+** Installation
+
+In leiningen add [clj-arrow "1.0.2-SNAPSHOT"] to dependencies. Otherwise, put the jar on the classpath. clj-arrow only has clojure as a dependency.
+
 ** Usage and installation
 
-First add [clj-arrow "1.0.2-SNAPSHOT"] as a dependency in leiningen, or put the jar on the classpath (requires only clojure).
-Then =use=, or =require= clj-arrow.arrow. In this namespace these functions exist (see docstrings for usage):
+First =use=, or =require= clj-arrow.arrow. In this namespace these functions exist (see docstrings for usage):
 
 *** functions creating functions
 
@@ -13,11 +19,13 @@ Then =use=, or =require= clj-arrow.arrow. In this namespace these functions exis
 - =&&&= - same as =***=, but takes a single value which is cloned to a pair.
 - =|||= - an =if= conditional statement for functions.
 
-*** misc
+*** multithreading
 
 - =set-multithreading-on= - enables multithreading (see below)
 - =set-multithreading-off= - disables multithreading
 - =is-multithreading?= - returns true/false whether multithreading is enabled or not
+- =***-multithread= - same as *** but always multithreads
+- =&&&-multithread= - same as &&& but always multithreads
 
 ** Multithreading
 
