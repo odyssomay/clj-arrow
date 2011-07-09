@@ -7,11 +7,11 @@ Then =use=, or =require= clj-arrow.arrow. In this namespace these functions exis
 
 - =>>>= - create a flow of functions to the right.
 - =<<<= - create a flow of functions to the left.
-- fst - apply a function to the first value of a pair.
-- snd - apply a function to the second value of a pair.
-- *** - apply two functions to respective values of a pair.
-- &&& - same as ***, but takes a single value which is cloned to a pair.
-- ||| - an =if= conditional statement for functions.
+- =fst= - apply a function to the first value of a pair.
+- =snd= - apply a function to the second value of a pair.
+- =***= - apply two functions to respective values of a pair.
+- =&&&= - same as =***=, but takes a single value which is cloned to a pair.
+- =|||= - an =if= conditional statement for functions.
 
 License (zlib)
 
