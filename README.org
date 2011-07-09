@@ -58,8 +58,8 @@ However, for clj-arrow it's simple: any /thing/ (class, interface, record ...) i
 the =clj-arrow.Arrow= protocol (or the underlying interface) is an arrow. The protocol defines the following functions:
 
 - =run= - function to execute the arrow. 
-- =>>>_int= - the arrow's implementation of >>>, takes only two arguments.
-- =fst_int= - the arrow's implementation of fst.
+- =>>>_int= - the arrow's implementation of =>>>=, takes only two arguments.
+- =fst_int= - the arrow's implementation of =fst=.
 
 An arrow implementing these functions must also not make any assumptions of what type of arrow is sent as the second argument to the =>>>_int= function.
 If these conditions are met, the arrow will work with all the functions described in Usage.
