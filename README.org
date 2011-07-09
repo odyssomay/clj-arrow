@@ -15,7 +15,7 @@ Then =use=, or =require= clj-arrow.arrow. In this namespace these functions exis
 
 If the function =set-multithreading-on= is called, multithreading is turned on for the =***= and =&&&= functions.
 
-#+BEGIN_SRC clojure
+#+BEGIN_SRC common-lisp
 (time ((&&& #(Thread/sleep %) #(Thread/sleep %)) 1000))
 ;   "Elapsed time: 2006.765373 msecs"
 ;=> [nil nil]
