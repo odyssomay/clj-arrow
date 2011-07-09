@@ -43,9 +43,7 @@ the =clj-arrow.Arrow= protocol* is an arrow. The protocol defines the following 
 - =>>>_int= - the arrows implementation of >>>, takes only two arguments.
 - =fst_int= - the arrows implementation of fst.
 
-#+BEGIN_VERSE
-* Or the underlying interface
-#+END_VERSE
+Or the underlying interface*
 
 ** License (zlib)
 
