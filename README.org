@@ -3,7 +3,7 @@ clj-arrow is a small library for combining functions.
 
 ** Installation
 
-In leiningen add [clj-arrow "1.0.3-SNAPSHOT"] to dependencies. Otherwise, put the 
+In leiningen add =[clj-arrow "1.0.3-SNAPSHOT"]= to dependencies. Otherwise, put the 
 [[https://github.com/downloads/odyssomay/clj-arrow/clj-arrow-1.0.3-SNAPSHOT.jar][jar]] 
 on the classpath. Only clojure is required as a dependency.
 
