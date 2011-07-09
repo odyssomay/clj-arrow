@@ -47,7 +47,7 @@ This is a delicate subject, which I must admit that I don't quite understand mys
 However, for clj-arrow it's simple: any /thing/ (class, interface, record ...) implementing 
 the =clj-arrow.Arrow= protocol (or the underlying interface) is an arrow. The protocol defines the following functions:
 
-- =run= - when this function is called, the arrow should execute. 
+- =run= - function to execute the arrow. 
 - =>>>_int= - the arrow's implementation of >>>, takes only two arguments.
 - =fst_int= - the arrow's implementation of fst.
 
