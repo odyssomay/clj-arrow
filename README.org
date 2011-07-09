@@ -46,7 +46,7 @@ If the function =set-multithreading-on= is called, multithreading is turned on f
 ;=> [nil nil]
 #+END_SRC
 
-It should be noted that =(set-multithreading-on)= (or off) alters the behavior of =***=/=&&&=, and not the function returned by =***=/=&&&= . 
+It should be noted that =(set-multithreading-on)= (or off) alters the behavior of =***= / =&&&=, and not the function returned by =***= / =&&&= . 
 Consider the following:
 
 #+BEGIN_SRC clojure
