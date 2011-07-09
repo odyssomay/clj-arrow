@@ -126,7 +126,7 @@ Example:
   ((||| nil? first second) [0 1])
 => 0
   ((||| nil? first second) [nil 1])
-=> 1"
+=> nil"
   ([arr1 arr2]
    (||| arr1 arr2 (constantly nil)))
   ([arr1 arr2 arr3]
