@@ -46,7 +46,7 @@ Using =***-multithread= or =&&&-multithread= work can be done in parallel.
 ** Functions and arrows
 
 While I only mention functions as arguments to the functions above, 
-they could be used just as well with any type of arrow (functions can be seen as the subset of arrows).
+they could be used just as well with any type of arrow (functions can be seen as a subset of arrows).
 
 *** What is an arrow?
 
