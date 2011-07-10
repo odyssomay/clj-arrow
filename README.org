@@ -35,9 +35,6 @@ Using =***-multithread= or =&&&-multithread= work can be done in parallel.
 ;   "Elapsed time: 2006.765373 msecs"
 ;=> [nil nil]
 
-(set-multithreading-on)
-;=> true
-
 (time ((&&&-multithread #(Thread/sleep %) #(Thread/sleep %)) 1000))
 ;   "Elapsed time: 1004.629826 msecs"
 ;=> [nil nil]
