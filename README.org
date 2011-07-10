@@ -23,15 +23,12 @@ First =use=, or =require= clj-arrow.arrow. In this namespace these functions exi
 
 *** multithreading
 
-- =set-multithreading-on= - enables multithreading (see below).
-- =set-multithreading-off= - disables multithreading.
-- =is-multithreading?= - returns true/false whether multithreading is enabled or not.
-- =***-multithread= - same as =***= but always multithreads.
-- =&&&-multithread= - same as =&&&= but always multithreads.
+- =***-multithread= - same as =***= but multithreads.
+- =&&&-multithread= - same as =&&&= but multithreads.
 
 ** Multithreading
 
-If the function =set-multithreading-on= is called, multithreading is turned on for the =***= and =&&&= functions.
+Using =***-multithread= or =&&&-multithread= work can be done in parallel.
 
 #+BEGIN_SRC clojure
 (time ((&&& #(Thread/sleep %) #(Thread/sleep %)) 1000))
@@ -41,11 +38,12 @@ If the function =set-multithreading-on= is called, multithreading is turned on f
 (set-multithreading-on)
 ;=> true
 
-(time ((&&& #(Thread/sleep %) #(Thread/sleep %)) 1000))
+(time ((&&&-multithread #(Thread/sleep %) #(Thread/sleep %)) 1000))
 ;   "Elapsed time: 1004.629826 msecs"
 ;=> [nil nil]
 #+END_SRC
 
+#+BEGIN_COMMENT
 It should be noted that =(set-multithreading-on)= (or off) alters the behavior of =***= / =&&&=, and not the function returned by =***= / =&&&= . 
 Consider the following:
 
@@ -63,6 +61,8 @@ Consider the following:
 ;   "Elapsed time: 2000.359132 msecs"
 ;=> [nil nil]
 #+END_SRC
+
+#+END_COMMENT
 
 ** Functions and arrows
 
