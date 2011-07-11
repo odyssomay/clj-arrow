@@ -55,7 +55,7 @@ the `clj-arrow.arrow/Arrow` protocol (or the underlying interface) is an arrow. 
 - `>>>_int` - the arrow's implementation of `>>>`, takes only two arguments.
 - `fst_int` - the arrow's implementation of `fst`.
 
-An arrow implementing these functions must also not make any assumptions of what type of arrow is sent as the second argument to the =>>>_int= function.
+An arrow implementing these functions must also not make any assumptions of what type of arrow is sent as the second argument to the `>>>_int` function.
 If these conditions are met, the arrow will work with all the functions described in Usage.
 
 ## License (zlib)
